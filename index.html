@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jariyan Arifudin | Portofolio GIS, Penginderaan Jauh &amp; Pemetaan UAV</title>
+  <meta name="description" content="Portofolio GIS, penginderaan jauh, dan pemetaan UAV oleh Jariyan Arifudin, lulusan Geografi Lingkungan UGM.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='1' y='1' width='14' height='14' fill='%23ff5a00' stroke='%230e0e0e' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Jariyan Arifudin</a>
+    <div class="top-right">
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="#proyek" id="nav-projects">Proyek</a>
+        <a href="#tentang" id="nav-about">Tentang</a>
+        <a href="#kontak" id="nav-contact">Kontak</a>
+        <a class="cv" id="nav-cv" href="assets/cv.pdf" download="CV - Jariyan Arifudin.pdf">Unduh CV &darr;</a>
+      </nav>
+      <div class="controls">
+        <div class="seg-toggle" role="group" aria-label="Pilih bahasa">
+          <button type="button" id="lang-id" class="active" aria-pressed="true">ID</button>
+          <button type="button" id="lang-en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="mode-btn" id="theme-toggle" aria-label="Ganti mode warna">
+          <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span id="theme-label">Gelap</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+  <section class="hero">
+    <h1>Jariyan<br>Arifudin</h1>
+    <dl class="spec">
+      <div><dt id="spec-field-dt">Bidang Keahlian</dt><dd id="spec-field-dd">GIS, Penginderaan Jauh, Pemetaan UAV</dd></div>
+      <div><dt id="spec-bg-dt">Pendidikan</dt><dd id="spec-bg-dd">Geografi Lingkungan, UGM</dd></div>
+      <div><dt id="spec-count-dt">Total Proyek</dt><dd><span id="sheetcount">10</span></dd></div>
+    </dl>
+  </section>
+
+  <section id="proyek">
+    <div class="sec-h">
+      <h2 id="sec-projects-h">Proyek Pilihan</h2>
+      <p class="count" id="count">10 proyek</p>
+    </div>
+    <div class="filters" id="chips" role="group" aria-label="Filter kategori"></div>
+
+    <div class="split">
+      <div class="tbl">
+        <div class="th label" aria-hidden="true">
+          <span id="th-no">No</span>
+          <span id="th-proj">Proyek</span>
+          <span id="th-loc">Lokasi</span>
+          <span id="th-yr">Tahun</span>
+        </div>
+        <div id="list"></div>
+      </div>
+
+      <aside class="mapcol" aria-label="Peta lokasi proyek">
+        <div class="mapframe">
+          <div class="basemap-bar" id="main-basemap-bar" role="group" aria-label="Pilihan peta dasar">
+            <button type="button" data-bm="minimal" class="active">Minimal</button>
+            <button type="button" data-bm="topo">Topografi</button>
+            <button type="button" data-bm="satellite">Satelit</button>
+          </div>
+          <button type="button" class="map-reset-btn" id="map-reset">Reset</button>
+          <div id="map"></div>
+        </div>
+        <p class="figcap"><span id="cap-l">Gbr. 1 &middot; Sebaran lokasi proyek</span><span id="cap-r">10 lokasi</span></p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="tentang">
+    <div class="sec-h"><h2 id="sec-about-h">Tentang</h2></div>
+    <div class="two">
+      <div class="about">
+        <div class="about-head">
+          <img class="about-photo" src="assets/img/profile.jpg" alt="Jariyan Arifudin">
+          <div class="about-id">
+            <p class="about-role" id="about-role">GIS &middot; Penginderaan Jauh &middot; Pemetaan UAV</p>
+            <p class="about-status" id="about-status">Lulusan Geografi Lingkungan UGM (2026) &middot; Terbuka untuk peluang kerja</p>
+            <p class="about-loc" id="about-loc">Sleman, Yogyakarta, Indonesia</p>
+          </div>
+        </div>
+        <p class="bio" id="about-bio"></p>
+        <dl class="about-stats" id="about-stats"></dl>
+      </div>
+      <div class="dl" id="about-dl"></div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="sec-h"><h2 id="sec-contact-h">Kontak</h2></div>
+    <div class="big">
+      <a href="mailto:jariyanarifudin@gmail.com">
+        <span id="ct-email">Email</span>
+        <small>jariyanarifudin@gmail.com &nearr;</small>
+      </a>
+      <a href="https://www.linkedin.com/in/jariyanarifudin/" target="_blank" rel="noopener noreferrer">
+        <span>LinkedIn</span>
+        <small>linkedin.com/in/jariyanarifudin &nearr;</small>
+      </a>
+      <a href="https://github.com/jariyan-arifudin" target="_blank" rel="noopener noreferrer">
+        <span>GitHub</span>
+        <small>github.com/jariyan-arifudin &nearr;</small>
+      </a>
+      <a href="assets/cv.pdf" download="CV - Jariyan Arifudin.pdf">
+        <span id="ct-cv">Unduh CV</span>
+        <small>PDF &darr;</small>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot" id="footer-text"></footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
